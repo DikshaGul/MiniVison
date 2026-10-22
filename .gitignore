@@ -10,9 +10,12 @@ __pycache__/
 # Environment variables
 .env
 .env.*
+!.env.example
 
 # Training runs and predictions
 runs/
 
 # Downloaded pretrained model
 yolo11n.pt
+
+!.env.example

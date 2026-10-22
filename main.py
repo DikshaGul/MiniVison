@@ -1,4 +1,15 @@
+import os
+from dotenv import load_dotenv
+from pathlib import Path
+from ultralytics import YOLO
+load_dotenv()
 
+MODEL_PATH = Path(os.getenv("MODEL_PATH", "models/best.pt"))
+IMAGE_SIZE = int(os.getenv("IMAGE_SIZE", "416"))
+CONFIDENCE_THRESHOLD = float(
+    os.getenv("CONFIDENCE_THRESHOLD", "0.35")
+)
+IOU_THRESHOLD = float(os.getenv("IOU_THRESHOLD", "0.5"))
 from pathlib import Path
 from ultralytics import YOLO
 
@@ -31,9 +42,9 @@ if not Path(image_path).is_file():
 # Detect fish and suppress overlapping boxes
 results = model.predict(
     source=image_path,
-    imgsz=416,
-    conf=0.35,
-    iou=0.5,
+   imgsz=IMAGE_SIZE,
+conf=CONFIDENCE_THRESHOLD,
+iou=IOU_THRESHOLD,
     agnostic_nms=True,
     save=True,
     project="runs/minivision",
@@ -52,4 +63,4 @@ for box in result.boxes:
     class_name = model.names[class_id]
     print(f"- {class_name}: {confidence:.2%} confidence")
 
-print("Annotated image saved in runs/minivision/prediction")
+print(f"Annotated image saved in: {result.save_dir}")
