@@ -1,3 +1,18 @@
+# Python environments
 .venv/
+.venv-1/
+venv/
+
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+
+# Training runs and predictions
+runs/
+
+# Downloaded pretrained model
+yolo11n.pt
