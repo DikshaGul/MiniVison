@@ -19,20 +19,19 @@ MiniVision is a computer vision project that detects and classifies fish in imag
 
 ## Project Structure
 
-```text
 MiniVision-Object-Detection/
-â”œâ”€â”€ dataset/
-â”‚   â”œâ”€â”€ train/
-â”‚   â”œâ”€â”€ valid/
-â”‚   â”œâ”€â”€ test/
-â”‚   â””â”€â”€ data.yaml
-â”œâ”€â”€ models/
-â”‚   â””â”€â”€ best.pt
-â”œâ”€â”€ main.py
-â”œâ”€â”€ requirements.txt
-â”œâ”€â”€ .gitignore
-â””â”€â”€ README.md
-```
+|-- dataset/
+|   |-- train/
+|   |-- valid/
+|   |-- test/
+|   `-- data.yaml
+|-- models/
+|   `-- best.pt
+|-- main.py
+|-- requirements.txt
+|-- .env.example
+|-- .gitignore
+`-- README.md
 
 ## Installation
 
